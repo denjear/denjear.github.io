@@ -1,0 +1,247 @@
+* {
+  font-family: "Montserrat", sans-serif;
+  scroll-behavior: smooth;
+}
+:root {
+  --warnaTitle: rgb(25, 4, 130);
+  --warnaPreTitle: rgb(119, 82, 254);
+  --secondaryBackground: #f8f9fa;
+}
+
+/* navbar */
+li {
+  padding-left: 10px;
+}
+.navbar-brand {
+  font-weight: 700;
+}
+
+/* header */
+header {
+  margin-top: 50px;
+  text-align: center;
+  padding: 50px;
+}
+header .title {
+  font-size: 48px;
+  margin-bottom: 20px;
+  overflow:hidden; /* Ensures the content is not revealed until the animation */
+  border-right: 3px solid var(--warnaPreTitle); /* The typwriter cursor */
+  white-space: nowrap; /* Keeps the content on a single line */
+  margin: 0 auto; /* Gives that scrolling effect as the typing happens */
+  letter-spacing: 8px; /* Adjust as needed */
+  animation: 
+    typing 5s steps(50, end),
+    blink-caret .75s step-end infinite;
+}
+@keyframes typing {
+  from { width: 0 }
+  to { width: 100% }
+}
+/* The typewriter cursor effect */
+@keyframes blink-caret {
+  from, to { border-color: transparent }
+  50% { border-color: var(--warnaPreTitle); }
+}
+header .title b {
+  color: var(--warnaTitle);
+}
+header .isi {
+  font-size: 24px;
+}
+
+/* section */
+section {
+  padding-top: 75px;
+  padding-bottom: 75px;
+}
+section .pre-title {
+  color: var(--warnaPreTitle);
+  font-size: 20px;
+  letter-spacing: 4px;
+}
+section .title {
+  font-size: 36px;
+  padding-bottom: 16px;
+  color: var(--warnaTitle);
+  font-weight: 700;
+}
+/* about-me */
+#aboutme {
+  background-color: var(--secondaryBackground);
+}
+#aboutme .isi {
+  font-size: 18px;
+  padding-bottom: 16px;
+  text-align: justify;
+}
+
+/* services */
+#services .pre-title {
+  text-align: center;
+}
+#services .title {
+  text-align: center;
+}
+#services .sub-title {
+  font-size: 24px;
+  font-weight: 700;
+}
+#services .isi {
+  text-align: justify;
+}
+
+/* portofolio */
+#portofolio {
+  background-color: var(--secondaryBackground);
+}
+
+#portofolio img{
+    width: 100%;
+    height: 200px;
+    object-fit:cover;
+    border-radius: 20px;
+    box-shadow: 15px 10px 22px var(--warnaPreTitle);
+}
+#portofolio .sub-title{
+    margin-bottom: 5px;
+    color: var(--warnaPreTitle);
+    font-size: 24px;
+    font-weight: 700;
+}
+#portofolio .tags{
+    padding-bottom: 10px;
+    display: flex;
+    gap:10px;
+}
+#portofolio .tags div{
+    font-size: 12px;
+    border: 1px solid darkgray;
+    border-radius: 20px;
+    padding: 8px;
+    color: gray;
+}
+#portofolio .isi{
+  text-align: justify;
+}
+#portofolio .card-header{
+  border: none;
+}
+#portofolio .card{
+  border: none;
+}
+/* education */
+#education .pre-title{
+  text-align: center;
+}
+#education .title{
+  text-align: center;
+}
+/* The actual timeline (the vertical ruler) */
+.main-timeline {
+  position: relative;
+}
+
+/* The actual timeline (the vertical ruler) */
+.main-timeline::after {
+  content: "";
+  position: absolute;
+  width: 6px;
+  background-color: var(--warnaTitle);
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  margin-left: -3px;
+}
+
+/* Container around content */
+.timeline {
+  position: relative;
+  background-color: inherit;
+  width: 50%;
+}
+
+/* The circles on the timeline */
+.timeline::after {
+  content: "";
+  position: absolute;
+  width: 25px;
+  height: 25px;
+  right: -13px;
+  background-color: var(--warnaTitle);
+  border: 5px solid var(--warnaPreTitle);
+  top: 15px;
+  border-radius: 50%;
+  z-index: 1;
+}
+
+/* Place the container to the left */
+.left {
+  padding: 0px 40px 20px 0px;
+  left: 0;
+}
+
+/* Place the container to the right */
+.right {
+  padding: 0px 0px 20px 40px;
+  left: 50%;
+}
+
+/* Add arrows to the left container (pointing right) */
+.left::before {
+  content: " ";
+  position: absolute;
+  top: 18px;
+  z-index: 1;
+  right: 30px;
+  border: medium solid white;
+  border-width: 10px 0 10px 10px;
+  border-color: transparent transparent transparent white;
+}
+
+/* Add arrows to the right container (pointing left) */
+.right::before {
+  content: " ";
+  position: absolute;
+  top: 18px;
+  z-index: 1;
+  left: 30px;
+  border: medium solid white;
+  border-width: 10px 10px 10px 0;
+  border-color: transparent white transparent transparent;
+}
+
+/* Fix the circle for containers on the right side */
+.right::after {
+  left: -12px;
+}
+.education-title .col-3{
+  text-align: center;
+  margin: auto;
+}
+#education h5{
+  font-weight: 700;
+}
+
+/* contact */
+#contact{
+  background-color: var(--secondaryBackground);
+}
+#contact .title{
+text-align: center;
+}
+#contact .pre-title{
+text-align: center;
+}
+
+
+
+
+/* footer */
+.footer {
+  display: flex;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 50px;
+}
