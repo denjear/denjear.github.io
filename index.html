@@ -23,32 +23,7 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
     />
-
-    <script>
-      function validateForm() {
-        var name = document.getElementById("name");
-        var phone = document.getElementById("phone");
-        var msg = document.getElementById("msg");
-        if (name.value == "") {
-          name.focus();
-          name.placeholder = "Example: John Doe";
-          msg.innerHTML = "Name cannot be blank!"
-          return false;
-        }
-        if (phone.value == "") {
-          phone.focus();
-          phone.placeholder = "Example: 081234567890";
-          msg.innerHTML = "Phone cannot be blank!";
-          return false;
-        }
-        if (isNaN(phone.value) == true) {
-          phone.focus();
-          msg.innerHTML = "Phone must be a number!";
-          return false;
-        }
-
-      }
-    </script>
+    
   </head>
   <body>
     <!-- bagian navbar -->
@@ -123,6 +98,7 @@
     <section id="services">
       <div class="container">
         <div class="pre-title">What can I do?</div>
+        <hr width="40%" />
         <div class="title">Services</div>
 
         <div class="card-columns">
@@ -177,12 +153,12 @@
       <div class="container">
         <div class="pre-title">
           Here's My Recent Works
-          <hr />
+          <hr width="30%" style="margin: 10px 0px 10px 0px" />
         </div>
         <div class="title">Portofolio</div>
         <div class="card-columns">
           <div class="card bg-light">
-            <div class="card-header bg-light">
+            <div class="zoom card-header bg-light">
               <img src="images/landing-page.jpg" alt="Landing Page" />
             </div>
             <div class="card-body">
@@ -204,7 +180,7 @@
             </div>
           </div>
           <div class="card bg-light">
-            <div class="card-header bg-light">
+            <div class="zoom card-header bg-light">
               <img src="images/mobile-apps.jpg" alt="Landing Page" />
             </div>
             <div class="card-body">
@@ -226,7 +202,7 @@
             </div>
           </div>
           <div class="card bg-light">
-            <div class="card-header bg-light">
+            <div class="zoom card-header bg-light">
               <img src="images/client-website.jpg" alt="Landing Page" />
             </div>
             <div class="card-body">
@@ -256,6 +232,7 @@
     <section id="education">
       <div class="container">
         <div class="pre-title">My journey throughout</div>
+        <hr width="40%" />
         <div class="title">Education</div>
 
         <div class="container py-5">
@@ -335,39 +312,60 @@
 
     <!-- contact -->
     <section id="contact">
+      
       <div class="container">
-        <div class="pre-title">Connect Me Further</div>
+        <div class="pre-title">Business Inquiries?</div>
         <div class="title">Contact</div>
-        <div class="m-5">
-          <form
-            action="https://google.com"
-            method="get"
-            onsubmit="return validateForm();"
-          >
-            <div class="form-group">
-              <label for="nrp">Name: </label>
-              <input type="text" class="form-control" id="name" />
-              <div id="msg" class="text-danger"></div>
+        <div class="container">
+          <form>
+            <div class="input-group">
+              <label>Name</label>
+              <input type="text" placeholder="Enter your name" id="contact-name" onkeyup="validateName()">
+              <span id="name-error"></span>
             </div>
-            <div class="form-group">
-              <label for="nrp">Phone: </label>
-              <input type="text" class="form-control" id="phone" />
-              <div id="msg" class="text-danger"></div>
+            <div class="input-group">
+              <label>Phone</label>
+              <input type="tel" placeholder="081234567890" id="contact-phone" onkeyup="validatePhone()">
+              <span id="phone-error"></span>
             </div>
-            <input type="submit" value="Submit" class="btn btn-outline-dark" />
-          </form>
-        </div>
+            <div class="input-group">
+              <label>Your Message</label>
+              <textarea rows="2" placeholder="Enter your message" id="contact-message" onkeyup="validateMessage()"></textarea>
+              <span id="message-error"></span>
+            </div>
+              <button class="btn btn-outline-dark" onclick="return validateForm()">Submit</button>
+              <span id="submit-error"></span>
+        </form>
+        <script src="myscript.js"></script>
       </div>
+      
     </section>
 
     <!-- footer -->
     <footer class="footer">
       <div class="container">
         <div class="row">
-          <div class="col-6">UTS Pemrograman WEB 2023 - Faiz Musyaffa</div>
           <div class="col-6">
-            <a class="mx-3" href="#!">Privacy Policy</a>
-            <a class="mx-3" href="#!">Terms of Use</a>
+            <p>UTS Pemrograman WEB 2023 - Faiz Musyaffa</p>
+          </div>
+          <div class="col-6">
+            <a
+              class="fa fa-linkedin-square"
+              href="https://www.linkedin.com/in/faizmusyaffa/"
+              target="_blank"
+            ></a>
+            <a
+              class="fa fa-facebook-square"
+              href="https://www.facebook.com/faiz.musyaffa.10?locale=id_ID"
+              target="_blank"
+            >
+            </a>
+            <a
+              class="fa fa-instagram"
+              href="https://www.instagram.com/faizmrx"
+              target="_blank"
+            >
+            </a>
           </div>
         </div>
       </div>
