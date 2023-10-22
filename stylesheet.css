@@ -5,6 +5,8 @@
 :root {
   --warnaTitle: rgb(25, 4, 130);
   --warnaPreTitle: rgb(119, 82, 254);
+  --thirdColor: rgb(142, 143, 250);
+  --fourthColor: rgb(194, 217, 255);
   --secondaryBackground: #f8f9fa;
 }
 
@@ -25,23 +27,30 @@ header {
 header .title {
   font-size: 48px;
   margin-bottom: 20px;
-  overflow:hidden; /* Ensures the content is not revealed until the animation */
+  overflow: hidden; /* Ensures the content is not revealed until the animation */
   border-right: 3px solid var(--warnaPreTitle); /* The typwriter cursor */
   white-space: nowrap; /* Keeps the content on a single line */
   margin: 0 auto; /* Gives that scrolling effect as the typing happens */
   letter-spacing: 8px; /* Adjust as needed */
-  animation: 
-    typing 5s steps(50, end),
-    blink-caret .75s step-end infinite;
+  animation: typing 5s steps(50, end), blink-caret 0.75s step-end infinite;
 }
 @keyframes typing {
-  from { width: 0 }
-  to { width: 100% }
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
 }
 /* The typewriter cursor effect */
 @keyframes blink-caret {
-  from, to { border-color: transparent }
-  50% { border-color: var(--warnaPreTitle); }
+  from,
+  to {
+    border-color: transparent;
+  }
+  50% {
+    border-color: var(--warnaPreTitle);
+  }
 }
 header .title b {
   color: var(--warnaTitle);
@@ -62,9 +71,9 @@ section .pre-title {
 }
 section .title {
   font-size: 36px;
-  padding-bottom: 16px;
   color: var(--warnaTitle);
   font-weight: 700;
+  margin-bottom: 12px;
 }
 /* about-me */
 #aboutme {
@@ -96,45 +105,52 @@ section .title {
   background-color: var(--secondaryBackground);
 }
 
-#portofolio img{
-    width: 100%;
-    height: 200px;
-    object-fit:cover;
-    border-radius: 20px;
-    box-shadow: 15px 10px 22px var(--warnaPreTitle);
+.zoom {
+  transition: transform 0.5s;
 }
-#portofolio .sub-title{
-    margin-bottom: 5px;
-    color: var(--warnaPreTitle);
-    font-size: 24px;
-    font-weight: 700;
+.zoom:hover {
+  transform: scale(1.1);
 }
-#portofolio .tags{
-    padding-bottom: 10px;
-    display: flex;
-    gap:10px;
+
+#portofolio img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 20px;
+  box-shadow: 0px 4px 20px var(--fourthColor);
 }
-#portofolio .tags div{
-    font-size: 12px;
-    border: 1px solid darkgray;
-    border-radius: 20px;
-    padding: 8px;
-    color: gray;
+#portofolio .sub-title {
+  margin-bottom: 5px;
+  color: var(--warnaPreTitle);
+  font-size: 24px;
+  font-weight: 700;
 }
-#portofolio .isi{
+#portofolio .tags {
+  padding-bottom: 10px;
+  display: flex;
+  gap: 10px;
+}
+#portofolio .tags div {
+  font-size: 12px;
+  border: 1px solid darkgray;
+  border-radius: 20px;
+  padding: 8px;
+  color: gray;
+}
+#portofolio .isi {
   text-align: justify;
 }
-#portofolio .card-header{
+#portofolio .card-header {
   border: none;
 }
-#portofolio .card{
+#portofolio .card {
   border: none;
 }
 /* education */
-#education .pre-title{
+#education .pre-title {
   text-align: center;
 }
-#education .title{
+#education .title {
   text-align: center;
 }
 /* The actual timeline (the vertical ruler) */
@@ -215,33 +231,83 @@ section .title {
 .right::after {
   left: -12px;
 }
-.education-title .col-3{
+.education-title .col-3 {
   text-align: center;
   margin: auto;
 }
-#education h5{
+#education h5 {
   font-weight: 700;
 }
 
 /* contact */
-#contact{
+#contact {
   background-color: var(--secondaryBackground);
 }
-#contact .title{
-text-align: center;
+#contact .title {
+  text-align: center;
 }
-#contact .pre-title{
-text-align: center;
+#contact .pre-title {
+  text-align: center;
 }
-
-
-
+.container form{
+  margin: 15px auto auto 0px;
+  padding: 50px 30px 20px;
+  background: #fff;
+  border-radius: 20px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.5);
+}
+.input-group{
+  align-items: center;
+  margin: 10px 0;
+}
+.input-group label{
+  flex-basis: 15%;
+  padding: 10px 0 0 0;
+}
+.input-group input, .input-group textarea{
+  flex-basis: 80%;
+  background: transparent;
+  border: 0;
+  outline: 0;
+  padding: 10px 0;
+  border-bottom: 1px solid #999;
+  color: #333;
+  font-size: 16px;
+}
+::placeholder{
+  font-size: 14px;
+}
+.input-group span{
+  position: absolute;
+  bottom: 12px;
+  right: 50px;
+  font-size: 14px;
+  color: red;
+}
+#submit-error{
+  margin-top: 12px;
+  color: red;
+  font-size: 12px;
+}
+.input-group span i{
+  color: seagreen;
+  font-size: 20px;
+}
 
 /* footer */
 .footer {
-  display: flex;
-  text-align: center;
-  margin-left: auto;
-  margin-right: auto;
   padding: 50px;
+  text-align: center;
+}
+.footer a {
+  margin-right: 6px;
+  margin-left: 6px;
+  font-size: 36px;
+  text-decoration: none !important;
+  color: black;
+  transition: transform 0.3s;
+}
+.footer a:hover {
+  transform: translateY(-5px);
+  color: black;
 }
