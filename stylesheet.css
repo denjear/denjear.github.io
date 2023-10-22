@@ -84,6 +84,11 @@ section .title {
   padding-bottom: 16px;
   text-align: justify;
 }
+#aboutme img{
+  width: 300px;
+  border-radius: 50%;
+  box-shadow: 0px 4px 20px var(--thirdColor);
+}
 
 /* services */
 #services .pre-title {
